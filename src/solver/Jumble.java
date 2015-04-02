@@ -39,7 +39,8 @@ public class Jumble {
 	}
 	
 	/**
-	 * Returns a list of words that can be created from my jumble string
+	 * Returns a list of words that can be created from my jumble string.
+	 * There are a lot of words in the lists that don't seem real, but are actually in the files.
 	 * @return list of words
 	 */
 	public ArrayList<String> getAllWords(){
