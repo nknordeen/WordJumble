@@ -17,14 +17,8 @@ public class Jumble {
 		this.letters = new LetterCount(word);
 		this.wordList = new WordList(path + "english-words.10.txt");
 		this.wordList.combineLists(path + "english-words.20.txt");	
-		this.wordList.combineLists(path + "english-words.35.txt");		
-		this.wordList.combineLists(path + "english-words.40.txt");	
-		this.wordList.combineLists(path + "english-words.50.txt");	
-		this.wordList.combineLists(path + "english-words.55.txt");	
-		this.wordList.combineLists(path + "english-words.60.txt");	
-		this.wordList.combineLists(path + "english-words.70.txt");	
-		this.wordList.combineLists(path + "english-words.80.txt");	
-		this.wordList.combineLists(path + "english-words.95.txt");	
+	
+		System.out.println("finished combining the lists");
 	}
 	
 	/**

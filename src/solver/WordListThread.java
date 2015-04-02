@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class WordList {
+public class WordListThread implements Runnable{
 	public ArrayList<String> words;
 	
 	
@@ -15,14 +15,16 @@ public class WordList {
 	 * and I am creating an arraylist out of the words, and preserving the alphabetical order.
 	 * @param file - path to file that is read
 	 */
-	public WordList(String file){
+	public WordListThread(){
 		this.words = new ArrayList<String>();
+	}
+	public void readFile(String file){
 		BufferedReader buffer = null;
 		try{
 			String word;
 			buffer = new BufferedReader(new FileReader(file));
 			while( (word = buffer.readLine()) != null){
-				words.add(word.toLowerCase());
+				this.words.add(word.toLowerCase());
 			}
 		}catch(IOException e){
 			e.printStackTrace();
@@ -41,7 +43,7 @@ public class WordList {
 	 * Merely a constructor used to test smaller cases.
 	 * @param list
 	 */
-	public WordList(String[] list) {
+	public WordListThread(String[] list) {
 		this.words = new ArrayList<String>(Arrays.asList(list));
 	}
 	
@@ -71,10 +73,10 @@ public class WordList {
 	/**
 	 * Adds the list of words to this certain instance.  
 	 * Doesn't keep them in alphabetical order, because it doesn't need to be.
-	 * @param list2
+	 * @param list
 	 */
-	public void combineLists(WordList list2){
-		this.words.addAll(list2.words);
+	public void combineLists(WordList list){
+		this.words.addAll(list.words);
 	}
 	
 	/**
@@ -85,6 +87,12 @@ public class WordList {
 	public void combineLists(String filePath){
 		WordList wl = new WordList(filePath);
 		this.combineLists(wl);
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 
