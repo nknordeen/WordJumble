@@ -45,8 +45,9 @@ public class WordListTest {
 	@Test
 	public void testCombineLists() {
 		String[] l1 = {"a","ab","b","bad", "bda"};
-		String[] l2 = {"aa", "ab", "ba", "cat"};
-		String[] l3 = {"a","aa","ab", "b","ba","bad","bda","cat"};
+		String[] l2 = {"aa", "ba", "cat"};
+		//no need for the lists to be sorted
+		String[] l3 = {"a","ab","b","bad", "bda","aa", "ba", "cat"};
 		WordList list1 = new WordList(l1);
 		WordList list2 = new WordList(l2);
 		WordList combinedLists = new WordList(l3);
