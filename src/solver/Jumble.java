@@ -18,7 +18,6 @@ public class Jumble {
 		this.wordList = new WordList(path + "english-words.10.txt");
 		this.wordList.combineLists(path + "english-words.20.txt");	
 	
-		System.out.println("finished combining the lists");
 	}
 	
 	/**

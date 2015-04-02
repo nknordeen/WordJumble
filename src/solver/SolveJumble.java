@@ -22,7 +22,6 @@ public class SolveJumble {
 			System.out.println(word);
 		}
 		in.close();
-		System.out.println("Thanks");
 	}
 	public static boolean hasOnlyLetters(String word){
 		for(int i = 0; i < word.length(); i++){
