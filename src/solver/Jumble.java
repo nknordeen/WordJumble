@@ -40,8 +40,13 @@ public class Jumble {
 	public ArrayList<String> getAllWords(){
 		ArrayList<String> matchedWords = new ArrayList<String>();
 		for(int i = 0; i<wordList.words.size(); i++){
-			if( letters.hasLessOrEqualLetters(wordList.words.get(i)) ){
-				matchedWords.add(wordList.words.get(i));
+			String word = wordList.words.get(i);
+			if( letters.hasLessOrEqualLetters(word) ){
+				
+				//in the prompt, the example input word was 'dog', but the returned list did not contain the word 'dog'
+				if( !word.equals(this.jumble) ){
+					matchedWords.add(wordList.words.get(i));	
+				}
 			}
 		}
 		return matchedWords;
